@@ -6,22 +6,22 @@
     <title>Mistilteinn</title>
     <link href="https://fonts.googleapis.com/css2?family=Fira+Mono:wght@400;500;700&display=swap" rel="stylesheet">
     
-    <meta name="description" content="Mistilteinn offers expert web and iOS development services. Mistilteinn deliver custom websites, iOS apps, and web applications tailored to your needs.">
-    <meta name="keywords" content="web development, iOS development, custom websites, mobile apps, UI/UX design, API development">
+    <meta name="description" content="Mistilteinn develops innovative iOS and macOS apps, and cutting-edge websites. Discover our digital wonders.">
+    <meta name="keywords" content="iOS apps, macOS apps, web development, mobile apps, UI/UX design">
     <meta name="author" content="Mistilteinn">
     
     <!-- Open Graph / Facebook -->
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://mistilteinn.vercel.app">
     <meta property="og:title" content="Mistilteinn">
-    <meta property="og:description" content="Expert web and iOS development services. Custom solutions tailored to your business needs.">
+    <meta property="og:description" content="Discover innovative iOS and macOS apps, and cutting-edge websites by Mistilteinn.">
     <meta property="og:image" content="https://www.mistilteinn.com/images/og-image.jpg">
 
     <!-- Twitter -->
     <meta property="twitter:card" content="summary_large_image">
     <meta property="twitter:url" content="https://mistilteinn.vercel.app">
-    <meta property="twitter:title" content="Mistilteinn - Specialized Web and iOS Development">
-    <meta property="twitter:description" content="Expert web and iOS development services. Custom solutions tailored to your business needs.">
+    <meta property="twitter:title" content="Mistilteinn - Innovative iOS and macOS Apps">
+    <meta property="twitter:description" content="Discover innovative iOS and macOS apps, and cutting-edge websites by Mistilteinn.">
     <meta property="twitter:image" content="https://www.mistilteinn.com/images/twitter-image.jpg">
 
     <!-- Favicon -->
@@ -110,49 +110,70 @@
         
         .portfolio-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 2rem;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 1.5rem;
         }
         
         .portfolio-item {
             background-color: var(--secondary-color);
             border-radius: 8px;
-            overflow: hidden;
+            padding: 1.5rem;
+            display: flex;
+            flex-direction: column;
             transition: transform 0.3s, box-shadow 0.3s;
-            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
         }
         
         .portfolio-item:hover {
             transform: translateY(-5px);
-            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
-        }
-        
-        .portfolio-item-content {
-            padding: 1.5rem;
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
         }
         
         .portfolio-item h3 {
             font-size: 1.2rem;
             margin-bottom: 0.5rem;
+            color: var(--accent-color);
         }
         
         .portfolio-item p {
             font-size: 0.9rem;
             margin-bottom: 1rem;
+            flex-grow: 1;
         }
         
-        .portfolio-item .tags {
+        .portfolio-meta {
             display: flex;
-            flex-wrap: wrap;
-            gap: 0.5rem;
+            justify-content: space-between;
+            align-items: center;
+            margin-top: auto;
         }
         
-        .portfolio-item .tag {
-            background-color: var(--accent-color);
-            color: #fff;
+        .tag {
+            background-color: rgba(52, 152, 219, 0.2);
+            color: var(--accent-color);
             padding: 0.2rem 0.5rem;
             border-radius: 4px;
             font-size: 0.8rem;
+        }
+        
+        .portfolio-links {
+            display: flex;
+            gap: 0.5rem;
+        }
+        
+        .link-button {
+            font-size: 0.8rem;
+            color: var(--text-color);
+            text-decoration: none;
+            padding: 0.2rem 0.5rem;
+            border: 1px solid var(--text-color);
+            border-radius: 4px;
+            transition: background-color 0.3s, color 0.3s;
+        }
+        
+        .link-button:hover {
+            background-color: var(--accent-color);
+            color: #fff;
+            border-color: var(--accent-color);
         }
         
         footer {
@@ -301,7 +322,7 @@
                 <nav>
                     <ul>
                         <li><a href="#about">About</a></li>
-                        <li><a href="#services">Services</a></li>
+                        <li><a href="#products">Products</a></li>
                         <li><a href="#portfolio">Portfolio</a></li>
                         <li><a href="#contact">Contact</a></li>
                     </ul>
@@ -313,51 +334,55 @@
     <main class="container">
         <section id="about">
             <h2>About Mistilteinn</h2>
-            <p>Mistilteinn is a specialized development service focusing on web and iOS solutions. With over a decade of industry experience, I deliver exceptional digital products tailored to meet unique client needs. My commitment to clean code and intuitive design results in high-quality, user-centric applications that make a real difference for clients.</p>
-            <a href="#contact" class="btn">Get in Touch</a>
+            <p>Welcome to Mistilteinn, where code meets creativity and innovation takes flight. We're digital alchemists, transforming ideas into captivating iOS and macOS apps, and weaving intricate web experiences that push the boundaries of what's possible. Our craft? Turning complexity into elegance, and user needs into seamless digital solutions that feel like magic at your fingertips.</p>
+            <p>Each Mistilteinn creation is a labor of love, meticulously forged in the fires of imagination and honed by cutting-edge technology. We don't just build apps and websites; we sculpt digital ecosystems where form embraces function, and every interaction tells a story.</p>
         </section>
 
-        <section id="services">
-            <h2>Services</h2>
+        <section id="products">
+            <h2>Our Products</h2>
             <ul>
-                <li><strong>Custom Website Development:</strong> Responsive, fast, and SEO-friendly websites built with modern technologies.</li>
-                <li><strong>iOS App Design and Development:</strong> Native iOS applications with sleek UIs and robust functionality.</li>
-                <li><strong>UI/UX Design:</strong> User-centered design solutions that enhance user engagement and satisfaction.</li>
-                <li><strong>Web Application Development:</strong> Scalable and secure web apps tailored to business needs.</li>
-                <li><strong>API Development and Integration:</strong> Custom API solutions and third-party integrations to streamline workflows.</li>
-                <li><strong>Performance Optimization:</strong> Improving the speed and efficiency of existing web and mobile applications.</li>
+                <li><strong>iOS Applications:</strong> Intuitive and feature-rich apps that enhance your mobile lifestyle.</li>
+                <li><strong>macOS Applications:</strong> Powerful tools designed to boost your productivity on Mac.</li>
+                <li><strong>Web Applications:</strong> Seamless online experiences accessible from any device.</li>
             </ul>
+            <p>Each Mistilteinn product is crafted with care, focusing on user experience, performance, and innovation. We're constantly evolving our offerings to meet the changing needs of our users.</p>
         </section>
 
         <section id="portfolio">
             <h2>Featured Work</h2>
             <div class="portfolio-grid">
                 <div class="portfolio-item">
-                    <div class="portfolio-item-content">
-                        <h3>FinEasy</h3>
-                        <p>Take control of your finances effortlessly with FinEasy – the ultimate app for seamless expense tracking and smart budgeting!</p>
-                        <div class="tags">
-                            <span class="tag">SwiftUI</span>
+                    <h3>FinEasy</h3>
+                    <p>Take control of your finances effortlessly with FinEasy – the ultimate app for seamless expense tracking and smart budgeting!</p>
+                    <div class="portfolio-meta">
+                        <span class="tag">iOS</span>
+                        <div class="portfolio-links">
+                            <a href="#" class="link-button">Demo</a>
+                            <a href="#" class="link-button">Install</a>
                         </div>
                     </div>
                 </div>
                 <div class="portfolio-item">
-                    <div class="portfolio-item-content">
-                        <h3>ClipCmdC</h3>
-                        <p>ClipCmdC is a powerful clipboard management application for macOS. It allows users to easily access, organize, and manage their clipboard history, with features like pinning, searching, and previewing clipboard items.</p>
-                        <div class="tags">
-                            <span class="tag">SwiftUI</span>
-                            <span class="tag">SQLite</span>
+                    <h3>ClipCmdC</h3>
+                    <p>A powerful clipboard management application for macOS. Easily access, organize, and manage your clipboard history.</p>
+                    <div class="portfolio-meta">
+                        <span class="tag">macOS</span>
+                        <span class="tag">SQLite</span>
+                        <div class="portfolio-links">
+                            <a href="#" class="link-button">Demo</a>
+                            <a href="#" class="link-button">Install</a>
                         </div>
                     </div>
                 </div>
                 <div class="portfolio-item">
-                    <div class="portfolio-item-content">
-                        <h3>Luminary</h3>
-                       <p>A macOS app that prevents your screen from sleeping with a simple, elegant interface.</p>
-                        <div class="tags">
-                            <span class="tag">SwiftUI</span>
-                            <span class="tag">IOKit</span>
+                    <h3>Luminary</h3>
+                    <p>A macOS app that prevents your screen from sleeping with a simple, elegant interface.</p>
+                    <div class="portfolio-meta">
+                        <span class="tag">macOS</span>
+                        <span class="tag">IOKit</span>
+                        <div class="portfolio-links">
+                            <a href="#" class="link-button">Demo</a>
+                            <a href="#" class="link-button">Install</a>
                         </div>
                     </div>
                 </div>
@@ -365,9 +390,9 @@
         </section>
 
         <section id="contact">
-            <h2>Get in Touch</h2>
-            <p>Interested in working with Mistilteinn? I'd be delighted to hear about your project. Please reach out via email or schedule a consultation call.</p>
-            <a href="mailto:contact@mistilteinn.com" class="btn">Email Me</a>
+            <h2>Connect With Us</h2>
+            <p>Have questions about our products or want to share your experience? We'd love to hear from you. Reach out for support, feedback, or to explore potential collaborations.</p>
+            <a href="mailto:contact@mistilteinn.com" class="btn">Get in Touch</a>
         </section>
     </main>
 
