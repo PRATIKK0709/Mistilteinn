@@ -3,323 +3,31 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Mistilteinn</title>
-    <link href="https://fonts.googleapis.com/css2?family=Fira+Mono:wght@400;500;700&display=swap" rel="stylesheet">
+    <title>Mistilteinn | Crafting Digital Excellence</title>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     
-    <meta name="description" content="Mistilteinn develops innovative iOS and macOS apps, and cutting-edge websites. Discover our digital wonders.">
+    <!-- Meta tags -->
+    <meta name="description" content="Mistilteinn - Crafting exceptional digital experiences through innovative iOS, macOS apps, and cutting-edge web solutions.">
     <meta name="keywords" content="iOS apps, macOS apps, web development, mobile apps, UI/UX design">
-    <meta name="author" content="Mistilteinn">
-    
-    <!-- Open Graph / Facebook -->
-    <meta property="og:type" content="website">
-    <meta property="og:url" content="https://mistilteinn.vercel.app">
-    <meta property="og:title" content="Mistilteinn">
-    <meta property="og:description" content="Discover innovative iOS and macOS apps, and cutting-edge websites by Mistilteinn.">
-    <meta property="og:image" content="https://www.mistilteinn.com/images/og-image.jpg">
+    <link rel="stylesheet" href="styles.css">
 
-    <!-- Twitter -->
-    <meta property="twitter:card" content="summary_large_image">
-    <meta property="twitter:url" content="https://mistilteinn.vercel.app">
-    <meta property="twitter:title" content="Mistilteinn - Innovative iOS and macOS Apps">
-    <meta property="twitter:description" content="Discover innovative iOS and macOS apps, and cutting-edge websites by Mistilteinn.">
-    <meta property="twitter:image" content="https://www.mistilteinn.com/images/twitter-image.jpg">
-
-    <!-- Favicon -->
-    <link rel="manifest" href="/site.webmanifest">
-    <style>
-        :root {
-            --bg-color: #101214;
-            --text-color: #e0e0e0;
-            --accent-color: #3498db;
-            --secondary-color: #2c3e50;
-            --hover-color: #2980b9;
-        }
-        
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-        
-        body {
-            font-family: 'Fira Mono', monospace;
-            line-height: 1.6;
-            color: var(--text-color);
-            background-color: var(--bg-color);
-        }
-        
-        .container {
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 0 2rem;
-        }
-        
-        header {
-            background-color: rgba(16, 18, 20, 0.95);
-            backdrop-filter: blur(10px);
-            position: sticky;
-            top: 0;
-            z-index: 1000;
-            padding: 1rem 0;
-        }
-        
-        .header-content {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-        }
-        
-        .logo {
-            font-size: 1.5rem;
-            font-weight: 700;
-            color: var(--accent-color);
-        }
-        
-        nav ul {
-            list-style-type: none;
-            display: flex;
-        }
-        
-        nav ul li {
-            margin-left: 1.5rem;
-        }
-        
-        nav ul li a {
-            color: var(--text-color);
-            text-decoration: none;
-            transition: color 0.3s;
-            font-weight: 500;
-        }
-        
-        nav ul li a:hover {
-            color: var(--accent-color);
-        }
-        
-        main {
-            padding-top: 2rem;
-        }
-        
-        section {
-            margin: 4rem 0;
-        }
-        
-        h1, h2 {
-            margin-bottom: 1.5rem;
-            font-weight: 700;
-        }
-        
-        .portfolio-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 1.5rem;
-        }
-        
-        .portfolio-item {
-            background-color: var(--secondary-color);
-            border-radius: 8px;
-            padding: 1.5rem;
-            display: flex;
-            flex-direction: column;
-            transition: transform 0.3s, box-shadow 0.3s;
-        }
-        
-        .portfolio-item:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
-        }
-        
-        .portfolio-item h3 {
-            font-size: 1.2rem;
-            margin-bottom: 0.5rem;
-            color: var(--accent-color);
-        }
-        
-        .portfolio-item p {
-            font-size: 0.9rem;
-            margin-bottom: 1rem;
-            flex-grow: 1;
-        }
-        
-        .portfolio-meta {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            margin-top: auto;
-        }
-        
-        .tag {
-            background-color: rgba(52, 152, 219, 0.2);
-            color: var(--accent-color);
-            padding: 0.2rem 0.5rem;
-            border-radius: 4px;
-            font-size: 0.8rem;
-        }
-        
-        .portfolio-links {
-            display: flex;
-            gap: 0.5rem;
-        }
-        
-        .link-button {
-            font-size: 0.8rem;
-            color: var(--text-color);
-            text-decoration: none;
-            padding: 0.2rem 0.5rem;
-            border: 1px solid var(--text-color);
-            border-radius: 4px;
-            transition: background-color 0.3s, color 0.3s;
-        }
-        
-        .link-button:hover {
-            background-color: var(--accent-color);
-            color: #fff;
-            border-color: var(--accent-color);
-        }
-        
-        footer {
-            text-align: center;
-            padding: 2rem 0;
-            margin-top: 4rem;
-            border-top: 1px solid var(--secondary-color);
-            background-color: rgba(44, 62, 80, 0.1);
-        }
-        
-        .social-icons {
-            margin-top: 1rem;
-        }
-        
-        .social-icons a {
-            color: var(--text-color);
-            font-size: 1.5rem;
-            margin: 0 0.5rem;
-            text-decoration: none;
-            transition: color 0.3s;
-        }
-        
-        .social-icons a:hover {
-            color: var(--accent-color);
-        }
-        
-        .btn {
-            display: inline-block;
-            background-color: var(--accent-color);
-            color: #fff;
-            padding: 0.75rem 1.5rem;
-            border-radius: 5px;
-            text-decoration: none;
-            transition: background-color 0.3s;
-            font-weight: 500;
-            margin-top: 1rem;
-        }
-        
-        .btn:hover {
-            background-color: var(--hover-color);
-        }
-        
-        .hamburger {
-            display: none;
-            cursor: pointer;
-            z-index: 1001;
-        }
-
-        .hamburger-lines {
-            width: 30px;
-            height: 26px;
-            position: relative;
-            transition: transform 0.3s ease-in-out;
-        }
-
-        .hamburger-lines span {
-            display: block;
-            position: absolute;
-            height: 3px;
-            width: 100%;
-            background: var(--text-color);
-            border-radius: 3px;
-            opacity: 1;
-            left: 0;
-            transform: rotate(0deg);
-            transition: .25s ease-in-out;
-        }
-
-        .hamburger-lines span:nth-child(1) {
-            top: 0px;
-        }
-
-        .hamburger-lines span:nth-child(2) {
-            top: 10px;
-        }
-
-        .hamburger-lines span:nth-child(3) {
-            top: 20px;
-        }
-
-        .hamburger.active .hamburger-lines span:nth-child(1) {
-            top: 10px;
-            transform: rotate(135deg);
-        }
-
-        .hamburger.active .hamburger-lines span:nth-child(2) {
-            opacity: 0;
-            left: -60px;
-        }
-
-        .hamburger.active .hamburger-lines span:nth-child(3) {
-            top: 10px;
-            transform: rotate(-135deg);
-        }
-        
-        @media (max-width: 768px) {
-            .hamburger {
-                display: block;
-            }
-            
-            nav {
-                position: fixed;
-                top: 0;
-                left: 0;
-                width: 100%;
-                height: 100vh;
-                background-color: var(--bg-color);
-                display: flex;
-                align-items: center;
-                justify-content: center;
-                transform: translateX(-100%);
-                transition: transform 0.3s ease-in-out;
-            }
-            
-            nav.active {
-                transform: translateX(0);
-            }
-            
-            nav ul {
-                flex-direction: column;
-                align-items: center;
-            }
-            
-            nav ul li {
-                margin: 1rem 0;
-            }
-            
-            nav ul li a {
-                font-size: 1.5rem;
-            }
-        }
-    </style>
 </head>
 <body>
+    <!-- Loading Animation -->
+    <div class="loader">
+        <div class="loader-content"></div>
+    </div>
+
+    <!-- Header -->
     <header>
         <div class="container">
             <div class="header-content">
                 <div class="logo">&lt;/&gt; Mistilteinn</div>
-                <div class="hamburger">
-                    <div class="hamburger-lines">
-                        <span></span>
-                        <span></span>
-                        <span></span>
-                    </div>
-                </div>
-                <nav>
+                <button class="mobile-menu-btn" aria-label="Toggle Menu">
+                    <i class="fas fa-bars"></i>
+                </button>
+                <nav class="desktop-nav">
                     <ul>
                         <li><a href="#about">About</a></li>
                         <li><a href="#products">Products</a></li>
@@ -330,112 +38,131 @@
         </div>
     </header>
 
-    <main class="container">
-        <section id="about">
-            <h2>About Mistilteinn</h2>
-            <p>Welcome to Mistilteinn, where code meets creativity and innovation takes flight. We're digital alchemists, transforming ideas into captivating iOS and macOS apps, and weaving intricate web experiences that push the boundaries of what's possible. Our craft? Turning complexity into elegance, and user needs into seamless digital solutions that feel like magic at your fingertips.</p>
-            <p>Each Mistilteinn creation is a labor of love, meticulously forged in the fires of imagination and honed by cutting-edge technology. We don't just build apps and websites; we sculpt digital ecosystems where form embraces function, and every interaction tells a story.</p>
-        </section>
-
-        <section id="products">
-            <h2>Our Products</h2>
+    <!-- Mobile Menu -->
+    <div class="mobile-menu">
+        <div class="mobile-menu-header">
+            <div class="logo">&lt;/&gt; Mistilteinn</div>
+            <button class="mobile-menu-close" aria-label="Close Menu">
+                <i class="fas fa-times"></i>
+            </button>
+        </div>
+        <nav class="mobile-nav">
             <ul>
-                <li><strong>iOS Applications:</strong> Intuitive and feature-rich apps that enhance your mobile lifestyle.</li>
-                <li><strong>macOS Applications:</strong> Powerful tools designed to boost your productivity on Mac.</li>
-                <li><strong>Web Applications:</strong> Seamless online experiences accessible from any device.</li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#products">Products</a></li>
+                <li><a href="#contact">Contact</a></li>
             </ul>
-            <p>Each Mistilteinn product is crafted with care, focusing on user experience, performance, and innovation. We're constantly evolving our offerings to meet the changing needs of our users.</p>
-        </section>
+        </nav>
+    </div>
 
-        <section id="portfolio">
-            <h2>Products</h2>
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="container">
+            <div class="hero-content">
+                <h1>Crafting Digital Excellence</h1>
+                <p>We transform ideas into exceptional digital experiences through innovative iOS, macOS apps, and cutting-edge web solutions.</p>
+                <div class="cta-buttons">
+                    <a href="#portfolio" class="btn btn-primary">View Our Work</a>
+                    <a href="#contact" class="btn btn-secondary">Get in Touch</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Portfolio Section -->
+    <section class="portfolio" id="portfolio">
+        <div class="container">
+            <div class="section-header fade-in">
+                <h2>Our Products</h2>
+                <p>Discover our latest digital innovations</p>
+            </div>
             <div class="portfolio-grid">
-                <div class="portfolio-item">
+                <!-- FinEasy -->
+                <div class="portfolio-item fade-in">
                     <h3>FinEasy</h3>
                     <p>Take control of your finances effortlessly with FinEasy – the ultimate app for seamless expense tracking and smart budgeting!</p>
                     <div class="portfolio-meta">
-                        <span class="tag">iOS</span>
+                        <div class="tags">
+                            <span class="tag">iOS</span>
+                        </div>
                         <div class="portfolio-links">
                             <a href="https://apps.apple.com/in/app/fineasy/id6478165097" class="link-button">Install</a>
                         </div>
                     </div>
                 </div>
-                <div class="portfolio-item">
+
+                <!-- ClipCmdC -->
+                <div class="portfolio-item fade-in">
                     <h3>ClipCmdC</h3>
                     <p>A powerful clipboard management application for macOS. Easily access, organize, and manage your clipboard history.</p>
                     <div class="portfolio-meta">
-                        <span class="tag">macOS</span>
-                        <span class="tag">SQLite</span>
+                        <div class="tags">
+                            <span class="tag">macOS</span>
+                            <span class="tag">SQLite</span>
+                        </div>
                         <div class="portfolio-links">
                             <a href="https://testflight.apple.com/join/4uQhbSfn" class="link-button">Install</a>
                         </div>
                     </div>
                 </div>
-                <div class="portfolio-item">
+
+                <!-- Wakey -->
+                <div class="portfolio-item fade-in">
                     <h3>Wakey</h3>
                     <p>A macOS app that prevents your screen from sleeping with a simple, elegant interface.</p>
                     <div class="portfolio-meta">
-                        <span class="tag">macOS</span>
-                        <span class="tag">IOKit</span>
+                        <div class="tags">
+                            <span class="tag">macOS</span>
+                            <span class="tag">IOKit</span>
+                        </div>
                         <div class="portfolio-links">
                             <a href="#" class="link-button">Install</a>
                         </div>
                     </div>
                 </div>
-
-                <div class="portfolio-item">
-                    <h3>LookOverDiscord</h3>
-                    <p> Website to look over someone's discord profile picture, banner and checking if a specific username is available to use or not.</p>
-                    <div class="portfolio-meta">
-                        <span class="tag">HTML</span>
-                        <span class="tag">CSS</span>
-                        <span class="tag">JS</span>
-                        <div class="portfolio-links">
-                            <a href="https://lookover-discord.vercel.app/" class="link-button">Visit</a>
-                        </div>
-                    </div>
-                </div>
-
             </div>
-        </section>
+        </div>
+    </section>
 
-        <section id="contact">
-            <h2>Connect With Us</h2>
-            <p>Have questions about our products or want to share your experience? We'd love to hear from you. Reach out for support, feedback, or to explore potential collaborations.</p>
-            <a href="mailto:contact@mistilteinn.com" class="btn">Get in Touch</a>
-        </section>
-    </main>
+    <!-- Contact Section -->
+    <section class="contact" id="contact">
+        <div class="container">
+            <div class="section-header fade-in">
+                <h2>Get in Touch</h2>
+                <p>Have a project in mind? Let's create something amazing together.</p>
+                <a href="mailto:contact@mistilteinn.com" class="btn btn-primary">Contact Us</a>
+            </div>
+        </div>
+    </section>
 
+    <!-- Footer -->
     <footer>
         <div class="container">
-            <p>&copy; 2024 Mistilteinn. All rights reserved.</p>
-            <p>
-                <a href="terms.html#terms-of-service">Terms of Service</a> | 
-                <a href="terms.html#privacy-policy">Privacy Policy</a> | 
-                <a href="terms.html#user-agreement">User Agreement</a>
-            </p>
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>Mistilteinn</h3>
+                    <p>Crafting exceptional digital experiences through innovative solutions.</p>
+                </div>
+                <div class="footer-section">
+                    <h3>Quick Links</h3>
+                    <ul class="footer-links">
+                        <li><a href="terms.html">Terms</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <!-- <h3>Connect</h3>
+                    <div class="social-links">
+                        <a href="#" aria-label="GitHub"><i class="fab fa-github"></i></a>
+                        <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+                        <a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a>
+                    </div> -->
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 Mistilteinn. All rights reserved.</p>
+            </div>
         </div>
     </footer>
-
-    <script>
-        const hamburger = document.querySelector('.hamburger');
-        const nav = document.querySelector('nav');
-
-        hamburger.addEventListener('click', () => {
-            hamburger.classList.toggle('active');
-            nav.classList.toggle('active');
-            document.body.classList.toggle('menu-open');
-        });
-
-        // Close menu when clicking on a link
-        const navLinks = document.querySelectorAll('nav ul li a');
-        navLinks.forEach(link => {
-            link.addEventListener('click', () => {
-                hamburger.classList.remove('active');
-                nav.classList.remove('active');
-                document.body.classList.remove('menu-open');
-            });
-        });
-    </script>
+    <script src="main.js"></script>
 </body>
 </html>
