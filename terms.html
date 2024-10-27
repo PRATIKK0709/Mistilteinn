@@ -3,135 +3,581 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Terms and Policies - Mistilteinn</title>
-    <link href="https://fonts.googleapis.com/css2?family=Fira+Mono:wght@400;500;700&display=swap" rel="stylesheet">
+    <title>Terms and Policies | Mistilteinn</title>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
     <style>
         :root {
-            --bg-color: #101214;
-            --text-color: #e0e0e0;
-            --accent-color: #3498db;
-            --secondary-color: #2c3e50;
-        }
-        
-        body {
-            font-family: 'Fira Mono', monospace;
-            line-height: 1.6;
-            color: var(--text-color);
-            background-color: var(--bg-color);
-            margin: 0;
-            padding: 0;
-        }
-        
-        .container {
-            max-width: 800px;
-            margin: 0 auto;
-            padding: 2rem;
-        }
-        
-        h1, h2, h3 {
-            color: var(--accent-color);
-        }
-        
-        a {
-            color: var(--accent-color);
-            text-decoration: none;
-        }
-        
-        a:hover {
-            text-decoration: underline;
+            --bg-primary: #0a0c0f;
+            --bg-secondary: #111827;
+            --text-primary: #f3f4f6;
+            --text-secondary: #9ca3af;
+            --accent-primary: #6366f1;
+            --accent-secondary: #4f46e5;
+            --gradient-primary: linear-gradient(135deg, #6366f1, #4f46e5);
+            --gradient-secondary: linear-gradient(135deg, #3b82f6, #6366f1);
+            --shadow-sm: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+            --shadow-md: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
         }
 
-        .section {
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+            scroll-padding-top: 80px;
+        }
+
+        body {
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            line-height: 1.7;
+            color: var(--text-primary);
+            background-color: var(--bg-primary);
+            overflow-x: hidden;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 2rem;
+        }
+
+        /* Header Styles */
+        header {
+            background: rgba(10, 12, 15, 0.95);
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .header-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            height: 80px;
+        }
+
+        .logo {
+            font-size: 1.8rem;
+            font-weight: 700;
+            background: var(--gradient-primary);
+            -webkit-background-clip: text;
+            background-clip: text;
+            -webkit-text-fill-color: transparent;
+            letter-spacing: -0.5px;
+        }
+
+        .desktop-nav ul {
+            display: flex;
+            gap: 3rem;
+            list-style: none;
+        }
+
+        .desktop-nav ul li a {
+            color: var(--text-primary);
+            text-decoration: none;
+            font-weight: 500;
+            position: relative;
+            padding: 0.5rem 0;
+            transition: color 0.3s ease;
+        }
+
+        .desktop-nav ul li a::after {
+            content: '';
+            position: absolute;
+            bottom: -2px;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background: var(--gradient-primary);
+            transition: width 0.3s ease;
+        }
+
+        .desktop-nav ul li a:hover {
+            color: var(--accent-primary);
+        }
+
+        .desktop-nav ul li a:hover::after {
+            width: 100%;
+        }
+
+        /* Mobile Menu Styles */
+        .mobile-menu-btn {
+            display: none;
+            background: none;
+            border: none;
+            color: var(--text-primary);
+            font-size: 1.5rem;
+            cursor: pointer;
+            padding: 0.5rem;
+        }
+
+        .mobile-menu {
+            position: fixed;
+            top: 0;
+            right: -100%;
+            width: 100%;
+            height: 100vh;
+            background: var(--bg-primary);
+            padding: 2rem;
+            transition: right 0.3s ease;
+            z-index: 1001;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .mobile-menu.active {
+            right: 0;
+        }
+
+        .mobile-menu-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
             margin-bottom: 2rem;
+        }
+
+        .mobile-menu-close {
+            background: none;
+            border: none;
+            color: var(--text-primary);
+            font-size: 1.5rem;
+            cursor: pointer;
+        }
+
+        .mobile-nav ul {
+            list-style: none;
+        }
+
+        .mobile-nav ul li {
+            margin-bottom: 1.5rem;
+        }
+
+        .mobile-nav ul li a {
+            color: var(--text-primary);
+            text-decoration: none;
+            font-size: 1.25rem;
+            display: block;
+            padding: 0.5rem 0;
+        }
+
+        /* Terms Page Styles */
+        .terms-section {
+            padding: 120px 0 80px;
+        }
+
+        .section-header {
+            text-align: center;
+            margin-bottom: 4rem;
+        }
+
+        .section-header h1 {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+            background: var(--gradient-primary);
+            -webkit-background-clip: text;
+            background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .terms-content {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .terms-card {
+            background: rgba(17, 24, 39, 0.5);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 24px;
+            padding: 2rem;
+            margin-bottom: 2rem;
+            backdrop-filter: blur(10px);
+            transition: all 0.3s ease;
+        }
+
+        .terms-card:hover {
+            border-color: var(--accent-primary);
+            transform: translateY(-5px);
+        }
+
+        .terms-card h2 {
+            font-size: 1.8rem;
+            margin-bottom: 1.5rem;
+            color: var(--accent-primary);
+        }
+
+        .terms-card h3 {
+            font-size: 1.2rem;
+            margin: 1.5rem 0 1rem;
+            color: var(--text-primary);
+        }
+
+        .terms-card p {
+            color: var(--text-secondary);
+            margin-bottom: 1rem;
+        }
+
+        .terms-card ul {
+            list-style: none;
+            padding-left: 1.5rem;
+        }
+
+        .terms-card ul li {
+            color: var(--text-secondary);
+            margin-bottom: 0.5rem;
+            position: relative;
+        }
+
+        .terms-card ul li::before {
+            content: "•";
+            color: var(--accent-primary);
+            position: absolute;
+            left: -1.5rem;
+        }
+
+        .contact-info {
+            text-align: center;
+            margin-top: 4rem;
+        }
+
+        .contact-info p {
+            color: var(--text-secondary);
+            margin-bottom: 1.5rem;
+        }
+
+        .btn {
+            padding: 1rem 2.5rem;
+            border-radius: 50px;
+            font-weight: 600;
+            text-decoration: none;
+            transition: all 0.3s ease;
+        }
+
+        .btn-primary {
+            background: var(--gradient-primary);
+            color: white;
+            box-shadow: var(--shadow-md);
+        }
+
+        .btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 15px 30px rgba(99, 102, 241, 0.2);
+        }
+
+        /* Footer Styles */
+        footer {
+            padding: 4rem 0;
+            background: rgba(17, 24, 39, 0.4);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .footer-content {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 4rem;
+        }
+
+        .footer-section h3 {
+            font-size: 1.2rem;
+            margin-bottom: 1.5rem;
+            color: var(--text-primary);
+        }
+
+        .footer-links {
+            list-style: none;
+        }
+
+        .footer-links li {
+            margin-bottom: 0.8rem;
+        }
+
+        .footer-links a {
+            color: var(--text-secondary);
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+
+        .footer-links a:hover {
+            color: var(--accent-primary);
+        }
+
+        .social-links {
+            display: flex;
+            gap: 1rem;
+        }
+
+        .social-links a {
+            color: var(--text-secondary);
+            font-size: 1.5rem;
+            transition: color 0.3s ease;
+        }
+
+        .social-links a:hover {
+            color: var(--accent-primary);
+        }
+
+        .footer-bottom {
+            margin-top: 2rem;
+            text-align: center;
+            color: var(--text-secondary);
+        }
+
+        /* Animations */
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .fade-in {
+            opacity: 0;
+            transform: translateY(20px);
+            transition: opacity 0.6s ease, transform 0.6s ease;
+        }
+
+        .fade-in.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        /* Responsive Design */
+        @media (max-width: 1024px) {
+            .container {
+                padding: 0 1.5rem;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .desktop-nav {
+                display: none;
+            }
+
+            .mobile-menu-btn {
+                display: block;
+            }
+
+            .terms-section {
+                padding: 100px 1rem 60px;
+            }
+
+            .section-header h1 {
+                font-size: 2.5rem;
+            }
+
+            .terms-card {
+                padding: 1.5rem;
+            }
+
+            .terms-card h2 {
+                font-size: 1.5rem;
+            }
+
+            .footer-content {
+                gap: 2rem;
+                text-align: center;
+            }
+
+            .social-links {
+                justify-content: center;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .section-header h1 {
+                font-size: 2rem;
+            }
+
+            .btn {
+                padding: 0.875rem 2rem;
+                width: 100%;
+                text-align: center;
+            }
         }
     </style>
 </head>
 <body>
-    <div class="container">
-        <h1>Terms and Policies</h1>
-        
-        <section id="terms-of-service" class="section">
-            <h2>Terms of Service</h2>
-            <p>Welcome to Mistilteinn. By using our services, you agree to comply with and be bound by the following terms and conditions:</p>
-            <h3>1. Acceptance of Terms</h3>
-            <p>By accessing or using Mistilteinn's services, you agree to be bound by these Terms of Service and all applicable laws and regulations. If you do not agree with any part of these terms, you may not use our services.</p>
-            
-            <h3>2. Use of Services</h3>
+    <!-- Header -->
+    <header>
+        <div class="container">
+            <div class="header-content">
+                <a href="index.html" class="logo">&lt;/&gt; Mistilteinn</a>
+                <button class="mobile-menu-btn" aria-label="Toggle Menu">
+                    <i class="fas fa-bars"></i>
+                </button>
+                <nav class="desktop-nav">
+                    <ul>
+                        <li><a href="index.html#about">About</a></li>
+                        <li><a href="index.html#products">Products</a></li>
+                        <li><a href="index.html#contact">Contact</a></li>
+                    </ul>
+                </nav>
+            </div>
+        </div>
+    </header>
+
+    <!-- Mobile Menu -->
+    <div class="mobile-menu">
+        <div class="mobile-menu-header">
+            <div class="logo">&lt;/&gt; Mistilteinn</div>
+            <button class="mobile-menu-close" aria-label="Close Menu">
+                <i class="fas fa-times"></i>
+            </button>
+        </div>
+        <nav class="mobile-nav">
             <ul>
-                <li>You agree to use our services only for lawful purposes and in accordance with these terms.</li>
-                <li>You must not use our services in any way that causes, or may cause, damage to the website or impairment of the availability or accessibility of the website.</li>
-                <li>You must not use our services in any way which is unlawful, illegal, fraudulent or harmful, or in connection with any unlawful, illegal, fraudulent or harmful purpose or activity.</li>
+                <li><a href="index.html#about">About</a></li>
+                <li><a href="index.html#products">Products</a></li>
+                <li><a href="index.html#contact">Contact</a></li>
             </ul>
-            
-            <h3>3. Intellectual Property</h3>
-            <p>The content, organization, graphics, design, compilation, magnetic translation, digital conversion and other matters related to the Website are protected under applicable copyrights, trademarks and other proprietary rights. The copying, redistribution, use or publication by you of any such matters or any part of the Website is strictly prohibited.</p>
-            
-            <h3>4. Disclaimer of Warranties</h3>
-            <p>Our services are provided "as is" without any representations or warranties, express or implied. Mistilteinn makes no representations or warranties in relation to the use or the results of the use of the services in terms of their correctness, accuracy, reliability, or otherwise.</p>
-            
-            <h3>5. Limitation of Liability</h3>
-            <p>Mistilteinn shall not be liable for any indirect, incidental, special, consequential or punitive damages, or any loss of profits or revenues, whether incurred directly or indirectly, or any loss of data, use, goodwill, or other intangible losses, resulting from your access to or use of or inability to access or use the services.</p>
-            
-            <h3>6. Changes to Terms</h3>
-            <p>We reserve the right to modify these terms at any time. We will always post the most current version on our website. By continuing to use the service after changes become effective, you agree to be bound by the revised terms.</p>
-        </section>
-        
-        <section id="privacy-policy" class="section">
-            <h2>Privacy Policy</h2>
-            <p>At Mistilteinn, we are committed to protecting your privacy. This Privacy Policy explains how we handle information in relation to our services:</p>
-            
-            <h3>1. Information Collection</h3>
-            <ul>
-                <li>We do not collect any user data in any of the applications we develop and distribute.</li>
-                <li>We do not use cookies or any other tracking technologies on our website.</li>
-                <li>Any information you provide directly to us (e.g., through contact forms) is used solely for the purpose of responding to your inquiries.</li>
-            </ul>
-            
-            <h3>2. Information Use</h3>
-            <ul>
-                <li>We do not process any sort of data with any third party or even ourselves.</li>
-                <li>We do not share, sell, or disclose any personal information to third parties.</li>
-            </ul>
-            
-            <h3>3. Data Security</h3>
-            <p>We implement a variety of security measures to maintain the safety of any information you might provide through contact forms. However, please be aware that no method of transmission over the Internet, or method of electronic storage, is 100% secure.</p>
-            
-            <h3>4. Changes to This Privacy Policy</h3>
-            <p>We may update our Privacy Policy from time to time. We will notify you of any changes by posting the new Privacy Policy on this page. You are advised to review this Privacy Policy periodically for any changes.</p>
-        </section>
-        
-        <section id="user-agreement" class="section">
-            <h2>User Agreement</h2>
-            <p>By using Mistilteinn's services, you agree to the following:</p>
-            
-            <h3>1. Code of Conduct</h3>
-            <ul>
-                <li>You will not use our services for any illegal or unauthorized purpose.</li>
-                <li>You will not attempt to gain unauthorized access to any part of our services or systems.</li>
-                <li>You will not interfere with or disrupt the integrity or performance of our services.</li>
-                <li>You will respect the intellectual property rights of Mistilteinn and third parties.</li>
-            </ul>
-            
-            <h3>2. User Responsibilities</h3>
-            <ul>
-                <li>You are responsible for maintaining the confidentiality of any login information associated with any account you use to access our services.</li>
-                <li>You agree to notify us immediately of any unauthorized use of your account.</li>
-                <li>You are responsible for all activities that occur under your account.</li>
-            </ul>
-            
-            <h3>3. Content</h3>
-            <p>You retain all of your ownership rights in your content. However, by submitting content to us, you grant us a worldwide, non-exclusive, royalty-free license to use, reproduce, distribute, and display such content in connection with the services.</p>
-            
-            <h3>4. Termination</h3>
-            <p>We reserve the right to terminate or suspend your access to our services at any time, without prior notice, for any reason, including, without limitation, breach of this User Agreement.</p>
-            
-            <h3>5. Disclaimer</h3>
-            <p>You acknowledge that your use of our services is at your own risk. We do not warrant that the services will meet your specific requirements or that the services will be uninterrupted, timely, secure, or error-free.</p>
-        </section>
-        
-        <p>If you have any questions about these terms and policies, please contact us at <a href="mailto:mistilteinndevs@gmail.com">mistilteinndevs@gmail.com</a>.</p>
-        
-        <p><a href="index.html">Back to Home</a></p>
+        </nav>
     </div>
+
+    <!-- Terms Content -->
+    <section class="terms-section">
+        <div class="container">
+            <div class="section-header fade-in">
+                <h1>Terms and Policies</h1>
+            </div>
+
+            <div class="terms-content fade-in">
+                <div class="terms-card">
+                    <h2>Terms of Service</h2>
+                    <p>Welcome to Mistilteinn. By using our services, you agree to comply with and be bound by the following terms and conditions:</p>
+                    
+                    <h3>1. Acceptance of Terms</h3>
+                    <p>By accessing or using Mistilteinn's services, you agree to be bound by these Terms of Service and all applicable laws and regulations. If you do not agree with any part of these terms, you may not use our services.</p>
+                    
+                    <h3>2. Use of Services</h3>
+                    <ul>
+                        <li>You agree to use our services only for lawful purposes and in accordance with these terms.</li>
+                        <li>You must not use our services in any way that causes, or may cause, damage to the website or impairment of the availability or accessibility of the website.</li>
+                        <li>You must not use our services in any way which is unlawful, illegal, fraudulent or harmful.</li>
+                    </ul>
+                </div>
+
+                <div class="terms-card">
+                    <h2>Privacy Policy</h2>
+                    <p>At Mistilteinn, we are committed to protecting your privacy. This Privacy Policy explains how we handle information in relation to our services:</p>
+                    
+                    <h3>1. Information Collection</h3>
+                    <ul>
+                        <li>We do not collect any user data in any of the applications we develop and distribute.</li>
+                        <li>We do not use cookies or any other tracking technologies on our website.</li>
+                        <li>Any information you provide directly to us is used solely for responding to your inquiries.</li>
+                    </ul>
+                    
+                    <h3>2. Information Use</h3>
+                    <ul>
+                        <li>We do not process any sort of data with any third party or even ourselves.</li>
+                        <li>We do not share, sell, or disclose any personal information to third parties.</li>
+                    </ul>
+                </div>
+
+                <div class="terms-card">
+                    <h2>User Agreement</h2>
+                    <p>By using Mistilteinn's services, you agree to the following:</p>
+                    
+                    <h3>1. Code of Conduct</h3>
+                    <ul>
+                        <li>You will not use our services for any illegal or unauthorized purpose.</li>
+                        <li>You will not attempt to gain unauthorized access to any part of our services.</li>
+                        <li>You will respect the intellectual property rights of Mistilteinn and third parties.</li>
+                    </ul>
+                    
+                    <h3>2. User Responsibilities</h3>
+                    <ul>
+                        <li>You are responsible for maintaining the confidentiality of any login information.</li>
+                        <li>You agree to notify us immediately of any unauthorized use of your account.</li>
+                        <li>You are responsible for all activities that occur under your account.</li>
+                    </ul>
+                </div>
+
+                <div class="contact-info fade-in">
+                    <p>If you have any questions about these terms and policies, please contact us at:</p>
+                    <a href="mailto:mistilteinndevs@gmail.com" class="btn btn-primary">mistilteinndevs@gmail.com</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>Mistilteinn</h3>
+                    <p>Crafting exceptional digital experiences through innovative solutions.</p>
+                </div>
+                <div class="footer-section">
+                    <h3>Quick Links</h3>
+                    <ul class="footer-links">
+                        <li><a href="index.html#about">About</a></li>
+                        <li><a href="index.html#portfolio">Products</a></li>
+                        <li><a href="index.html#contact">Contact</a></li>
+                    </ul>
+                </div>
+                <!-- <div class="footer-section">
+                    <h3>Connect</h3>
+                    <div class="social-links">
+                        <a href="#" aria-label="GitHub"><i class="fab fa-github"></i></a>
+                        <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+                        <a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a>
+                    </div>
+                </div>
+            </div> -->
+            <div class="footer-bottom">
+                <p>&copy; 2024 Mistilteinn. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Mobile menu functionality
+        const mobileMenuBtn = document.querySelector('.mobile-menu-btn');
+        const mobileMenuCloseBtn = document.querySelector('.mobile-menu-close');
+        const mobileMenu = document.querySelector('.mobile-menu');
+
+        mobileMenuBtn.addEventListener('click', () => {
+            mobileMenu.classList.add('active');
+        });
+
+        mobileMenuCloseBtn.addEventListener('click', () => {
+            mobileMenu.classList.remove('active');
+        });
+
+        // Fade-in animation
+        const observerOptions = {
+            root: null,
+            rootMargin: '0px',
+            threshold: 0.1
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                }
+            });
+        }, observerOptions);
+
+        document.querySelectorAll('.fade-in').forEach(element => {
+            observer.observe(element);
+        });
+    </script>
 </body>
 </html>
